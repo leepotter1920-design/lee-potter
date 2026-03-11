@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lee Potter, Ph.D. | Aquatic Biogeochemistry</title>
+  <meta
+    name="description"
+    content="Personal website of Lee Potter, Ph.D., aquatic biogeochemist studying watershed phosphorus dynamics, sediments, and estuarine water quality."
+  />
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --accent: #0f766e;
+      --accent-light: #ccfbf1;
+      --accent-blue: #0ea5e9;
+      --dark: #0f172a;
+      --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      --radius: 24px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #f8fafc 0%, #eef6f7 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.88);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+    }
+
+    .nav-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 1.06rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .menu a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .menu a:hover { color: var(--text); }
+
+    .hero {
+      padding: 78px 0 40px;
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 38px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.6rem, 5vw, 5.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin: 0 0 28px;
+      max-width: 760px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 18px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.94);
+      box-shadow: var(--shadow);
+      font-weight: 600;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(15, 23, 42, 0.1);
+    }
+
+    .btn.primary {
+      background: var(--dark);
+      color: #fff;
+      border-color: var(--dark);
+    }
+
+    .card {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .snapshot {
+      padding: 22px;
+    }
+
+    .snapshot img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      margin-bottom: 18px;
+    }
+
+    .snapshot h3 {
+      margin: 0 0 10px;
+      font-size: 1.16rem;
+    }
+
+    .bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .bullets li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--muted);
+      font-size: 0.97rem;
+      margin: 10px 0;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      margin-top: 10px;
+      flex: none;
+    }
+
+    section { padding: 18px 0; }
+
+    .section-title {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .section-heading {
+      margin: 0 0 16px;
+      font-size: clamp(1.9rem, 3vw, 2.8rem);
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .pane {
+      padding: 30px;
+    }
+
+    .pane p,
+    .muted {
+      color: var(--muted);
+    }
+
+    .biogeo {
+      padding: 32px;
+    }
+
+    .diagram-wrap {
+      margin-top: 20px;
+      background: linear-gradient(180deg, #f8fdff 0%, #eef8ff 100%);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 14px;
+    }
+
+    .themes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .theme-card {
+      padding: 26px;
+    }
+
+    .theme-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.14rem;
+    }
+
+    .theme-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .pub-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .pub {
+      display: block;
+      padding: 24px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .pub:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 38px rgba(15, 23, 42, 0.1);
+    }
+
+    .pub-year {
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .pub h3 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+      line-height: 1.45;
+    }
+
+    .pub p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .dark {
+      background: linear-gradient(135deg, #0f172a 0%, #102c37 100%);
+      color: #fff;
+    }
+
+    .dark .section-title { color: #cbd5e1; }
+
+    .awards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .award {
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      color: #e2e8f0;
+    }
+
+    .contact-links a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero,
+      .grid-2,
+      .themes,
+      .awards {
+        grid-template-columns: 1fr;
+      }
+
+      .menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Lee Potter</a>
+      <nav class="menu">
+        <a href="#about">About</a>
+        <a href="#biogeochem">Biogeochemistry</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#personal">Personal</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Ph.D. · Louisiana State University</div>
+        <h1>Watershed phosphorus biogeochemistry, sediment dynamics, and estuarine water quality.</h1>
+        <p class="lead">
+          I am Lee Potter, an aquatic biogeochemist studying how phosphorus and carbon move through watersheds, sediments, and shallow estuarine systems. My work focuses on nutrient loading, internal sediment release, harmful algal bloom risk, and management-relevant water quality dynamics in the Lake Pontchartrain Basin and connected coastal environments.
+        </p>
+        <div class="button-row">
+          <a class="btn primary" href="#publications">View Publications</a>
+          <a class="btn" href="https://scholar.google.com/citations?hl=en&user=zt9ckVgAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a class="btn" href="Lee_Potter_CV_2026_03_09.docx">Download CV</a>
+        </div>
+      </div>
+
+      <aside class="card snapshot">
+        <img src="LeePotter_headshot.jpg" alt="Lee Potter field photo" />
+        <h3>Research Snapshot</h3>
+        <ul class="bullets">
+          <li><span class="dot"></span><span>Ph.D. in Oceanography &amp; Coastal Sciences at Louisiana State University</span></li>
+          <li><span class="dot"></span><span>Research focus: phosphorus biogeochemistry, sediment-water interactions, and harmful algal bloom risk</span></li>
+          <li><span class="dot"></span><span>Lake Pontchartrain Basin and subtropical river-estuary systems</span></li>
+          <li><span class="dot"></span><span>Field campaigns, sediment core experiments, geospatial analysis, and long-term water quality datasets</span></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="about">
+      <div class="grid-2">
+        <div class="card pane">
+          <p class="section-title">About</p>
+          <h2 class="section-heading">Biogeochemist studying watershed-estuary nutrient dynamics.</h2>
+          <p>
+            I am an aquatic biogeochemist working at the intersection of watershed science, sediment chemistry, and coastal water quality. My research focuses on how phosphorus and carbon move through river networks, sediments, and estuarine systems, and how those processes influence harmful algal blooms and ecosystem health. Much of my work centers on the Lake Pontchartrain Basin in coastal Louisiana, where I combine field sampling, sediment core incubations, laboratory geochemistry, geospatial analysis, and long-term environmental datasets to understand both external nutrient loading and internal sediment nutrient release.
+          </p>
+        </div>
+        <div class="card pane">
+          <p class="section-title">Methods</p>
+          <h2 class="section-heading">How I work</h2>
+          <p>
+            My research combines intensive field campaigns, laboratory incubations and sediment core experiments, nutrient and geochemical analyses, spatial mapping, and statistical modeling to answer applied questions about nutrient retention, release, and ecosystem response.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="biogeochem">
+      <div class="card biogeo">
+        <p class="section-title">Biogeochemistry</p>
+        <h2 class="section-heading">How nutrient biogeochemistry works</h2>
+        <p class="muted">
+          Biogeochemistry examines how chemical elements move through biological and physical components of Earth systems. In aquatic environments, nutrients such as phosphorus cycle between sediments, water, and organisms. Processes like microbial mineralization, redox reactions, sediment diffusion, and physical disturbance can release nutrients back into the water column, where they may stimulate primary production or harmful algal blooms.
+        </p>
+
+        <div class="diagram-wrap">
+          <svg viewBox="0 0 900 360" style="width:100%" role="img" aria-label="Conceptual diagram of nutrient transport from watershed to estuary and ocean">
+            <rect x="30" y="90" width="240" height="170" rx="24" fill="#dbeafe"></rect>
+            <rect x="330" y="90" width="240" height="170" rx="24" fill="#bae6fd"></rect>
+            <rect x="630" y="90" width="240" height="170" rx="24" fill="#7dd3fc"></rect>
+
+            <text x="70" y="70" font-size="24" font-weight="700">Watershed</text>
+            <text x="365" y="70" font-size="24" font-weight="700">River / Estuary</text>
+            <text x="710" y="70" font-size="24" font-weight="700">Ocean</text>
+
+            <text x="65" y="140" font-size="18">Soils and runoff</text>
+            <text x="65" y="172" font-size="18">Nutrient inputs</text>
+            <text x="65" y="204" font-size="18">Land-water connections</text>
+
+            <text x="365" y="140" font-size="18">Water column</text>
+            <text x="365" y="172" font-size="18">Sediment storage</text>
+            <text x="365" y="204" font-size="18">Release under disturbance</text>
+
+            <text x="675" y="140" font-size="18">Export downstream</text>
+            <text x="675" y="172" font-size="18">Coastal productivity</text>
+            <text x="675" y="204" font-size="18">Ecosystem response</text>
+
+            <line x1="270" y1="175" x2="330" y2="175" stroke="#0f172a" stroke-width="4"></line>
+            <polygon points="330,175 316,166 316,184" fill="#0f172a"></polygon>
+            <line x1="570" y1="175" x2="630" y2="175" stroke="#0f172a" stroke-width="4"></line>
+            <polygon points="630,175 616,166 616,184" fill="#0f172a"></polygon>
+
+            <line x1="450" y1="120" x2="450" y2="245" stroke="#1d4ed8" stroke-dasharray="7 6" stroke-width="3"></line>
+            <polygon points="450,245 442,231 458,231" fill="#1d4ed8"></polygon>
+            <text x="470" y="190" font-size="16" fill="#1d4ed8">Diffusion / settling</text>
+
+            <line x1="410" y1="245" x2="410" y2="120" stroke="#b91c1c" stroke-dasharray="7 6" stroke-width="3"></line>
+            <polygon points="410,120 402,134 418,134" fill="#b91c1c"></polygon>
+            <text x="170" y="300" font-size="16">Transport</text>
+            <text x="420" y="300" font-size="16">Sediment-water exchange</text>
+            <text x="720" y="300" font-size="16">Coastal export</text>
+          </svg>
+        </div>
+
+        <p class="muted" style="margin-top:18px; margin-bottom:0;">
+          My research focuses particularly on phosphorus, one of the key nutrients controlling productivity in freshwater and coastal ecosystems. By understanding when sediments retain phosphorus and when they release it, we can better predict harmful algal bloom risk and design more effective nutrient management strategies.
+        </p>
+      </div>
+    </section>
+
+    <section id="research">
+      <p class="section-title">Research</p>
+      <h2 class="section-heading">Current themes</h2>
+      <div class="themes">
+        <div class="card theme-card">
+          <h3>Legacy phosphorus in river sediments</h3>
+          <p>Examining how redox conditions, dredging, and sediment age influence phosphorus release from subtropical tributaries flowing into the Lake Pontchartrain estuary.</p>
+        </div>
+        <div class="card theme-card">
+          <h3>Shear stress and internal loading</h3>
+          <p>Evaluating how wind-driven sediment disturbance can mobilize bioavailable phosphorus and contribute to eutrophic conditions and harmful algal blooms in shallow estuarine systems.</p>
+        </div>
+        <div class="card theme-card">
+          <h3>Watershed-to-estuary nutrient pathways</h3>
+          <p>Linking watershed loading, sediment storage, and coastal response using field data, long-term records, and geospatial analysis to support water quality management.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <p class="section-title">Publications</p>
+      <h2 class="section-heading">Selected work</h2>
+      <div class="pub-list">
+        <a class="card pub" href="https://repository.lsu.edu/oceanography_coastal_pubs/1320/" target="_blank" rel="noreferrer">
+          <div class="pub-year">2026</div>
+          <h3>Legacy phosphorus dynamics in subtropical river sediments: impacts of dredging and water column aeration status</h3>
+          <p>Journal of Environmental Quality</p>
+        </a>
+        <a class="card pub" href="https://repository.lsu.edu/oceanography_coastal_pubs/1319/" target="_blank" rel="noreferrer">
+          <div class="pub-year">2026</div>
+          <h3>Wind-driven shear stress on sediment phosphorus release: implications for water quality and harmful algal blooms in a shallow estuary</h3>
+          <p>Science of the Total Environment</p>
+        </a>
+        <a class="card pub" href="https://repository.lsu.edu/oceanography_coastal_pubs/1322/" target="_blank" rel="noreferrer">
+          <div class="pub-year">2025</div>
+          <h3>Implications of river reconnection on phosphorus cycling in coastal wetlands</h3>
+          <p>Science of the Total Environment</p>
+        </a>
+        <a class="card pub" href="https://www.researchgate.net/profile/Lee-Potter-2" target="_blank" rel="noreferrer">
+          <div class="pub-year">2025</div>
+          <h3>Significance of standardizing carbon dioxide measurement time within lake systems to constrain CO2 outgassing estimation uncertainties</h3>
+          <p>Water</p>
+        </a>
+        <a class="card pub" href="https://repository.lsu.edu/agrnr_pubs/1446/" target="_blank" rel="noreferrer">
+          <div class="pub-year">2023</div>
+          <h3>Can a eutrophic lake function as a carbon sink? Case study of a subtropical eutrophic lake in southern USA</h3>
+          <p>Journal of Hydrology</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="awards">
+      <div class="card dark" style="padding: 32px;">
+        <p class="section-title">Recognition</p>
+        <h2 class="section-heading" style="margin-bottom: 22px;">Scholarships and awards</h2>
+        <div class="awards">
+          <div class="award">Louisiana Coasts, Oceans, Ports, and Rivers Institute Scholarship (2025)</div>
+          <div class="award">William H. Patrick, Jr. Ph.D. Scholarship for Wetlands Expertise (2023, 2024, 2025)</div>
+          <div class="award">Van Lopik Superior Graduate Student Research Fellowship (2024)</div>
+          <div class="award">ASA, CSSA, SSSA Future Leaders in Science Award (2024)</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="personal">
+      <div class="card pane">
+        <p class="section-title">Personal</p>
+        <h2 class="section-heading">Beyond research</h2>
+        <p>
+          Outside of research I spend as much time as possible outdoors. I enjoy rock climbing, mountain biking, skiing, and long-distance hiking. Many of the places that inspire my research interests—coastlines, rivers, and mountains—are also where I spend my free time exploring landscapes on foot or by bike. Outdoor travel continues to shape how I think about landscapes, environmental change, and watershed processes.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="grid-2">
+        <div class="card pane">
+          <p class="section-title">Contact</p>
+          <h2 class="section-heading">Get in touch</h2>
+          <p>
+            For research collaborations, speaking opportunities, or professional inquiries related to nutrient biogeochemistry, watershed science, and estuarine water quality, the best public starting points are your LSU lab page, Google Scholar, and ResearchGate profile.
+          </p>
+        </div>
+        <div class="card pane contact-links">
+          <p class="section-title">Profiles</p>
+          <p><strong>Institution</strong><br />Louisiana State University<br />Department of Oceanography &amp; Coastal Sciences</p>
+          <p style="margin-top: 16px;">
+            <a href="https://faculty.lsu.edu/whitelab/people/index.php" target="_blank" rel="noreferrer">Wetland &amp; Aquatic Biogeochemistry Lab</a><br />
+            <a href="https://scholar.google.com/citations?hl=en&user=zt9ckVgAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a><br />
+            <a href="https://www.researchgate.net/profile/Lee-Potter-2" target="_blank" rel="noreferrer">ResearchGate</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    Built as a personal academic website for Lee Potter, Ph.D.
+  </footer>
+</body>
+</html>
